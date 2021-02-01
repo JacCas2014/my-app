@@ -7,6 +7,7 @@ import { products } from '../products';
   styleUrls: ['./product-list.component.sass']
 })
 export class ProductListComponent implements OnInit {
+  // property of this component
   products = products;
 
   share() {

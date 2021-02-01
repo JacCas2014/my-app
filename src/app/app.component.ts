@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+// component class that handles data and functionality
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
