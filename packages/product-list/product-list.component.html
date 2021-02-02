@@ -1,0 +1,27 @@
+<h2>Products</h2>
+
+<!-- *ngFor is a structural directive, which shapes/reshapes the DOM's structure -->
+<!-- products is passed from the product-list.component.ts file -->
+<div *ngFor="let product of products">
+  <h3>
+    <!-- sets the title to be the product's name value in the template expression using the property binding [ ] syntax -->
+    <!-- {{ }} is Angular's interpolation syntax, which lets the property value be rendered as text-->
+    <a [title]="product.name + ' details'">{{ product.name }}</a>
+  </h3>
+  <p *ngIf="product.description">
+    Description: {{ product.description }}
+  </p>
+
+  <!-- binds button's click event to the share() method in the product-list.component.ts file -->
+  <!-- Event binding uses ( ) parentheses around the element's event (i.e. the (click) event of the <button> element) -->
+  <button (click)="share()">
+    Share
+  </button>
+
+  <!-- this is a child of this component -->
+  <!-- set the product property to the products using property binding [ ] syntax -->
+  <app-product-alerts
+  [product]="product">
+
+  </app-product-alerts>
+</div>
