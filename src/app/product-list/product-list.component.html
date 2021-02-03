@@ -4,9 +4,12 @@
 <!-- products is passed from the product-list.component.ts file -->
 <div *ngFor="let product of products">
   <h3>
-    <!-- sets the title to be the product's name value in the template expression using the property binding [ ] syntax -->
+    <!-- binds the title to be the product's name value in the template expression using the property binding [ ] syntax -->
+    <!-- binds the routerLink property to the route '/products/<product.id>' -->
     <!-- {{ }} is Angular's interpolation syntax, which lets the property value be rendered as text-->
-    <a [title]="product.name + ' details'">{{ product.name }}</a>
+    <a [title]="product.name + ' details'" [routerLink]="['/products', product.id]">
+      {{ product.name }}
+    </a>
   </h3>
   <p *ngIf="product.description">
     Description: {{ product.description }}
